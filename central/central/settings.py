@@ -10,10 +10,16 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
 import os
+import sys
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+TEMPLATE_ROOT = os.path.join(os.path.dirname(BASE_DIR), "central/central/templates")
 
 
 # Quick-start development settings - unsuitable for production
@@ -37,6 +43,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    #TC
+    'bootstrap3',
+    'assinaturas.apps.AssinaturasConfig',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +64,12 @@ ROOT_URLCONF = 'central.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            #Pasta template de cada modulo
+            os.path.join(BASE_DIR, 'templates'),
+            #Pasta template principal
+            os.path.join(BASE_DIR, 'templates', TEMPLATE_ROOT),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -103,9 +118,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'UTC'
+#TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 
