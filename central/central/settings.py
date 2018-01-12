@@ -33,6 +33,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+#Define onde vai rodar
+#DOMINIO = "http://localhost:8000"
 
 # Application definition
 
@@ -47,6 +49,7 @@ INSTALLED_APPS = [
     #TC
     'bootstrap3',
     'assinaturas.apps.AssinaturasConfig',
+    'contas.apps.ContasConfig',
 ]
 
 MIDDLEWARE = [
@@ -134,3 +137,21 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+#Add nova pasta de static
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR,'central/static'),
+)
+
+
+#Redirects de login e logout
+#Set qual a tela após login e logout
+LOGIN_URL = '/admin/login'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_URL = '/admin/logout'
+LOGOUT_REDIRECT_URL = '/'
+
+#Fechar sessão se o browser for fechado
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+#Fechar sessão se passar 5 min = 5*60 segundo
+#SESSION_COOKIE_AGE = 5*60
