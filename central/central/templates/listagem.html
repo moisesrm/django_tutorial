@@ -1,0 +1,17 @@
+{% extends 'template.html' %}
+
+{% block content %}
+    <div class='div-listagem'>
+        <h3 align='center' style="color:black;"><b>{% block titulo_listagem %}{% endblock titulo_listagem %}</b></h3>
+        <br />
+        <table id='listagem' class='display' cellspacing='0' width='100%'>
+            <thead>
+                {% block tabelaCabecalho %}{% endblock tabelaCabecalho %}
+            </thead>
+            <tbody>
+                {% block tabelaCorpo %}{% endblock tabelaCorpo %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+

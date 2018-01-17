@@ -10,5 +10,40 @@
     {% else %}
         <p>No polls are available.</p>
     {% endif %}tem
+
+    <h1>Example Form</h1>
+    <div style="width:30%">
+        <form action="">
+            {%csrf_token%}
+            {% for error in form.non_field_errors %}
+            <div class="form-group has-errors text-danger small">
+                {{error}}
+            </div>
+            {% endfor %}
+            {% for field in form %}
+            <div class="form-group has-errors text-danger small">
+                {{field.errors}}
+            </div>
+            <div class="form-group has-errors text-danger small">
+            </div>
+            <div class="form-group">
+                {{field}}
+            </div>
+            {% endfor %}
+            <button class="btn btn-primary" style="width:100%">Login</button>
+        </form>
+    </div>
+    
+    <h1>Example 2 Form</h1>
+    <form action="/url/to/submit/" method="post" class="form">
+        {% csrf_token %}
+        bootstrap_form form 
+         buttons
+        <button type="submit" class="btn btn-primary">
+            <i class="fa fa-star"></i> Submit
+        </button>
+        endbuttons
+    </form>
+
 {% endblock %}
 
