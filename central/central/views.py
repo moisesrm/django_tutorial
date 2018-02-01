@@ -11,7 +11,7 @@ def index(request):
 def login(request):
     latest_question_list = "Hello, world. You're at the polls index."
     context = {'texto': latest_question_list}
-    return render(request, 'assinaturas/index_2.html', context)
+    return render(request, 'home/login.html', context)
 
 def index_2(request):
     latest_question_list = "Hello, world. You're at the polls index."

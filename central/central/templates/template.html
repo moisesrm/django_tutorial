@@ -20,6 +20,9 @@
     <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}" />
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
     {% block cssAdicional %}{% endblock cssAdicional %}
+
+    <script src="{% static 'js/jquery-1.10.2.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
     
     <!--script type="text/javascript" src="{% static "fusioncharts/fusioncharts.js" %}"></script-->
     <!--script type="text/javascript" src="{% static "fusioncharts/themes/fusioncharts.theme.fint.js" %}"></script-->
@@ -28,7 +31,7 @@
 <body>
     
     {# Display django.contrib.messages as Bootstrap alerts #}
-    {% include "menu.html" %}
+    {% include "menu.html" %}    
     <div class="content container" id="conteudo_template">
         {% bootstrap_messages %}
         <div class="row">
@@ -41,8 +44,7 @@
 
 </body>
 
-<script src="{% static 'js/jquery-1.10.2.min.js' %}"></script>
-<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
 {% block jsAdicional %}{% endblock jsAdicional %}
 </html>
 

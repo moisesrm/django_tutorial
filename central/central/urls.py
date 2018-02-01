@@ -18,12 +18,9 @@ from django.urls import include, path
 from . import views as central_view
 
 urlpatterns = [
-    path('', central_view.index, name="Home"),
-    path('login', central_view.index, name="Home"),
-    path('logout', central_view.index, name="Home"),
-    
+    path('', central_view.index, name="Home"),    
+    path('anomalias/', include('anomalias.urls')),
     path('assinaturas/', include('assinaturas.urls')),
-    path('usuarios/', include('usuarios.urls')),
     path('admin/', admin.site.urls),
     
 ]

@@ -1,14 +1,45 @@
-{% extends 'template.html' %}
+{% extends 'template.html' %} 
 
 {% block content %}
-    {% if textos %}
-        <ul>
-            {% for question in latest_question_list %}
-                <li><a href="{% url 'assinaturas:detail' question.id %}">{{ question.question_text }}</a></li>
-            {% endfor %}
-        </ul>
-    {% else %}
-        <p>No polls are available.</p>
-    {% endif %}tem
+    <div class="col-sm-4 hidden-xs"></div>
+    <div class="col-sm-4 col-xs-12">
+        {% if messages %} {% for message in messages %}
+        <div class="{{ message.tags }}">
+            <strong>Mensagem:</strong> {{ message }}
+        </div>
+        {% endfor %} {% endif %}
+        
+        <h3 align='center' style="color:black;"><b>{% block legenda %}{{pagina}}{% endblock legenda%}</b></h3>
+        <div class="well">
+            <body>
+                <form class="form-vertical" name="form" method="post">
+                    {% csrf_token %}
+                    <fieldset>
+                        {% for field in form  %}
+                            <div class="form-group">
+                            <div class="control-label">
+                                {{ field.label_tag }}
+                            </div>
+                            {{ field }}
+                            {% if field.errors %}
+                                <div class="alert alert-dismissible alert-danger">
+                                    <button type="button" class="close" data-dismiss="alert">×</button>
+                                    {{ field.errors}}
+                                </div>
+                            {% endif %}
+                            </div>
+                        {% endfor %}
+                        <div class="form-group">
+                            <div class="col-xs-12"  align='center'>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fa fa-save"></i> Salvar
+                                </button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </body>
+        </div>
+    </div>
+    <div class="col-sm-4 hidden-xs"></div>
 {% endblock %}
-

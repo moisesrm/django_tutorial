@@ -48,8 +48,9 @@ INSTALLED_APPS = [
 
     #TC
     'bootstrap3',
+    'anomalias.apps.AnomaliasConfig',
     'assinaturas.apps.AssinaturasConfig',
-    'usuarios.apps.UsuariosConfig',
+    'relatorios.apps.RelatoriosConfig',
 ]
 
 MIDDLEWARE = [
@@ -155,6 +156,3 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 #Fechar sessão se passar 5 min = 5*60 segundo
 #SESSION_COOKIE_AGE = 5*60
-
-#Define model que será usado para autenticao
-AUTH_USER_MODEL = 'usuarios.User'

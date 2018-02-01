@@ -20,11 +20,6 @@ app_name = 'assinaturas'
 urlpatterns = [
      # ex: /assinaturas/
     path('', views.index, name='index'),
-    path('index_2', views.index_2, name='index_2'),
-    # ex: /assinaturas/5/
-    path('<int:question_id>/', views.detail, name='detail'),
-    # ex: /assinaturas/5/results/
-    path('<int:question_id>/results/', views.results, name='results'),
-    # ex: /assinaturas/5/vote/
-    path('<int:question_id>/vote/', views.vote, name='vote'),
+    path('cadastro', views.formulario, name='cadastro'),
+    path('editar/<int:id>', views.formulario, name='editar')
 ]

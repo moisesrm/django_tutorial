@@ -1,8 +1,9 @@
 {% extends 'template.html' %}
+{% load static %}
 
 {% block content %}
     <div class='div-listagem'>
-        <h3 align='center' style="color:black;"><b>{% block titulo_listagem %}{% endblock titulo_listagem %}</b></h3>
+        <h3 align='center' style="color:black;"><b>{% block tituloListagem %}{% endblock tituloListagem %}</b></h3>
         <br />
         <table id='listagem' class='display' cellspacing='0' width='100%'>
             <thead>
@@ -14,4 +15,28 @@
         </table>
     </div>
 {% endblock %}
+
+{% block jsAdicional %}
+    <script src="{% static 'dataTables/jquery-1.12.4.js' %}"></script>
+    <script src="{% static 'dataTables/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'dataTables/dataTables.buttons.min.js' %}"></script>
+    <script src="{% static 'dataTables/buttons.flash.min.js' %}"></script>
+    <script src="{% static 'dataTables/jszip.min.js' %}"></script>
+    <script src="{% static 'dataTables/pdfmake.min.js' %}"></script>
+    <script src="{% static 'dataTables/vfs_fonts.js' %}"></script>
+    <script src="{% static 'dataTables/buttons.html5.min.js' %}"></script>
+    <script src="{% static 'dataTables/buttons.print.min.js' %}"></script>
+    <script src="{% static 'dataTables/buttons.colVis.min.js' %}"></script>
+    <script>$(document).ready(function(){
+        $('#listagem').DataTable();
+    });</script>
+{% endblock jsAdicional %}
+
+$(document).ready(function(){
+    $('#myTable').DataTable();
+});
+{% block cssAdicional %}
+    <link rel="stylesheet" type="text/css" href="{% static 'dataTables/jquery.dataTables.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'dataTables/buttons.dataTables.min.css'%}"/>
+{% endblock cssAdicional %}
 

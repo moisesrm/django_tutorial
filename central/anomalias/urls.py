@@ -16,8 +16,10 @@ Including another URLconf
 from django.urls import path
 from . import views
 
-app_name = 'usuarios'
+app_name = 'anomalias'
 urlpatterns = [
-     # ex: /usuarios/
-    path('', views.listagem, name='listagem'),
+     # ex: /anomalias/
+    path('', views.index, name='index'),
+    path('cadastro', views.formulario, name='cadastro'),
+    path('editar/<int:id>', views.formulario, name='editar')
 ]

@@ -11,7 +11,7 @@
             </button>
             <a class="navbar-brand" href="#">Sistema</a>
         </div>
-
+        {% if user.is_authenticated %}
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
@@ -20,27 +20,27 @@
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-book"></i> Assinaturas <span class="caret"></span>
+                        <i class="fa fa-tags"></i> Anomalia <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="/assinaturas/adicionar"><i class="fa fa-pencil"></i> Adicionar</a>
+                            <a href="/anomalias/cadastro"><i class="fa fa-pencil"></i> Adicionar</a>
                         </li>
                         <li>
-                            <a href="/assinaturas"><i class="fa fa-list"></i> Listagem</a>
+                            <a href="/anomalias"><i class="fa fa-list"></i> Listagem</a>
                         </li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-user"></i> Usuarios <span class="caret"></span>
+                        <i class="fa fa-book"></i> Assinaturas <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="/usuarios/adicionar"><i class="fa fa-pencil"></i> Adicionar</a>
+                            <a href="/assinaturas/cadastro"><i class="fa fa-pencil"></i> Adicionar</a>
                         </li>
                         <li>
-                            <a href="/usuarios"><i class="fa fa-list"></i> Listagem</a>
+                            <a href="/assinaturas"><i class="fa fa-list"></i> Listagem</a>
                         </li>
                     </ul>
                 </li>
@@ -55,6 +55,7 @@
                 </li>
             </ul>
         </div>
+        {% endif %}
         <!-- /.navbar-collapse -->
     </div>
     <!-- /.container-fluid -->
