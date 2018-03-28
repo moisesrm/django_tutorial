@@ -1,3 +1,9 @@
+### Innstalacao
+> sudo apt-get install python3-virtualenv
+> sudo apt-get install python-setuptools python-dev build-essential 
+> sudo easy_install pip
+> sudo pip install django==1.11.11
+
 ### Ambiente Virtual
 Para carregar o ambiente virtual, basta colar o codigo no terminal:
 > . load_venv.sh
