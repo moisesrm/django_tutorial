@@ -48,8 +48,10 @@ INSTALLED_APPS = [
 
     #TC
     'bootstrap3',
-    'anomalias.apps.AnomaliasConfig',
-    'assinaturas.apps.AssinaturasConfig',
+    'access_points.apps.AccessPointsConfig',
+    'devices.apps.DevicesConfig',
+    'device_history.apps.DeviceHistorysConfig',
+    'logs.apps.LogsConfig',
     'relatorios.apps.RelatoriosConfig',
 ]
 

@@ -4,6 +4,7 @@
 > sudo easy_install pip
 > sudo pip install django==2.0.1
 
+
 ### Ambiente Virtual
 Para carregar o ambiente virtual, basta colar o codigo no terminal:
 > . load_venv.sh
