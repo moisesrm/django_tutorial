@@ -19,8 +19,9 @@ from . import views as central_view
 
 urlpatterns = [
     path('', central_view.index, name="Home"),    
-    path('anomalias/', include('anomalias.urls')),
-    path('assinaturas/', include('assinaturas.urls')),
+    path('access_point/', include('access_points.urls')),
+    path('aparelho_historico/', include('device_history.urls')),
+    #path('aparelho/', include('devices.urls')),
     path('admin/', admin.site.urls),
     
 ]

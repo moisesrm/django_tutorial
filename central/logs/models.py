@@ -3,9 +3,9 @@ from django.db import models
 class Log(models.Model):
     login_required = True
     description = models.TextField("Descrição",max_length=200)
-    datetime = models.DatetimeField('Data Hora',auto_now_add=True)
+    datetime = models.DateTimeField('Data Hora',auto_now_add=True)
 
-class class Meta:
+class Meta:
     db_table = 'logs'
     managed = True
     verbose_name = 'Registros do Sistema'

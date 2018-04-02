@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'devices.apps.DevicesConfig',
     'device_history.apps.DeviceHistorysConfig',
     'logs.apps.LogsConfig',
-    'relatorios.apps.RelatoriosConfig',
+    #'relatorios.apps.RelatoriosConfig',
 ]
 
 MIDDLEWARE = [

@@ -16,7 +16,7 @@ Including another URLconf
 from django.urls import path
 from . import views
 
-app_name = 'aparelho_historico'
+app_name = 'device_history'
 urlpatterns = [
      # ex: /access_point/
     path('', views.index, name='index'),

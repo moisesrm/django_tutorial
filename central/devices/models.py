@@ -1,10 +1,10 @@
-from access_points.models import AccessPoint
 from django.db import models
+from access_points.models import AccessPoint
 
 # Create your models here.
 class Device(models.Model):
     login_required = True
-    id_access_point = model.ForeignKey(AccessPoint, verbose_name='access_point', on_delete='models.CASCADE', related_name='devices')
+    id_access_point = models.IntegerField("Canal",default=0)
     mac = models.TextField("Descrição",max_length=200)
     vendor = models.TextField("BSSID",max_length=200)
     standard = models.TextField("Padrão",max_length=200)
@@ -12,9 +12,9 @@ class Device(models.Model):
     frequency = models.TextField("Frequencia",max_length=200)
     signal = models.TextField("Sinal",max_length=200)
     status = models.IntegerField('Status',default=0)
-    last_update = models.DatetimeField('Ultima Atualizacao',auto_now_add=True)
+    last_update = models.DateTimeField('Ultima Atualizacao',auto_now_add=True)
 
-class class Meta:
+class Meta:
     db_table = 'devices'
     managed = True
     verbose_name = 'Aparelho'
