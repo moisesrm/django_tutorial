@@ -5,6 +5,7 @@ from .models import DeviceHistory
 
 @login_required
 def index(request):
-    histories = DeviceHistory.objects.all()
+    #histories = DeviceHistory.objects.all()
+    histories = []
     context = {'histories': histories}
     return render(request, 'device_history/index.html', context)

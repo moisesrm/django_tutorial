@@ -4,19 +4,4 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def index(request):
-    latest_question_list = "Hello, world. You're at the polls index."
-    context = {'texto': latest_question_list}
-    return render(request, 'home/index.html', context)
-
-def login(request):
-    latest_question_list = "Hello, world. You're at the polls index."
-    context = {'texto': latest_question_list}
-    return render(request, 'home/login.html', context)
-
-def index_2(request):
-    latest_question_list = "Hello, world. You're at the polls index."
-    context = {'texto': latest_question_list}
-    return render(request, 'assinaturas/index_2.html', context)
-
-def index_3(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+    return render(request, 'home/index.html')

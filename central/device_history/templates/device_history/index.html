@@ -1,0 +1,33 @@
+{% extends 'listagem.html' %}
+
+{% block titulo %}Historico de Aparelhos{% endblock titulo %}
+{% block tituloListagem %}Historico de Aparelhos{% endblock tituloListagem %}
+
+{% block tabelaCabecalho %}
+    <tr>
+        <th>Aparelho</th>
+        <th>Access Point</th>
+        <th>Canal</th>
+        <th>Frequencia</th>
+        <th>Sinal</th>
+        <th>Descricao</th>
+        <th>Data/Hora</th>
+    </tr>     
+{% endblock tabelaCabecalho %}
+
+{% block tabelaCorpo %}        
+
+    {% for history in histories  %}
+        <tr>
+            <td>{{ id_device }} </td>
+            <td>{{ id_access_point }} </td>
+            <td>{{ channel }} </td>
+            <td>{{ frequency }} </td>
+            <td>{{ signal }} </td>
+            <td>{{ description }} </td>
+            <td>{{ datetime }} </td>
+        </tr>
+    {% endfor %} 
+   
+{% endblock tabelaCorpo %}
+

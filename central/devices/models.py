@@ -4,9 +4,9 @@ from access_points.models import AccessPoint
 # Create your models here.
 class Device(models.Model):
     login_required = True
-    id_access_point = models.IntegerField("Canal",default=0)
-    mac = models.TextField("Descrição",max_length=200)
-    vendor = models.TextField("BSSID",max_length=200)
+    id_access_point = models.IntegerField("Access Point",default=0)
+    mac = models.TextField("Mac",max_length=200)
+    vendor = models.TextField("Fabricante",max_length=200)
     standard = models.TextField("Padrão",max_length=200)
     channel = models.IntegerField("Canal",default=6)
     frequency = models.TextField("Frequencia",max_length=200)

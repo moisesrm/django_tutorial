@@ -1,0 +1,23 @@
+{% extends 'listagem.html' %}
+
+{% block titulo %}Registros do Sistema{% endblock titulo %}
+{% block tituloListagem %}Registros do Sistema{% endblock tituloListagem %}
+
+{% block tabelaCabecalho %}
+    <tr>
+        <th>Data/Hora</th>
+        <th>Descricao</th>
+    </tr>     
+{% endblock tabelaCabecalho %}
+
+{% block tabelaCorpo %}        
+
+    {% for log in logs  %}
+        <tr>
+            <td>{{ log.datetime }}</td>
+            <td>{{ log.description }}</td>
+        </tr>
+    {% endfor %} 
+   
+{% endblock tabelaCorpo %}
+

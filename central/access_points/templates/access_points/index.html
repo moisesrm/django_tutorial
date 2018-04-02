@@ -1,0 +1,33 @@
+{% extends 'listagem.html' %}
+
+{% block titulo %}Access Points{% endblock titulo %}
+{% block tituloListagem %}Access Points{% endblock tituloListagem %}
+
+{% block tabelaCabecalho %}
+    <tr>
+        <th>Mac</th>
+        <th>BSSID</th>
+        <th>Largura de Banda</th>
+        <th>Padrão</th>
+        <th>Canal</th>
+        <th>Frequencia</th>
+        <th>Sinal</th>
+    </tr>     
+{% endblock tabelaCabecalho %}
+
+{% block tabelaCorpo %}        
+
+    {% for accessPoint in accessPoints  %}
+        <tr>
+            <td>{{ accessPoint.mac }}</td>
+            <td>{{ accessPoint.bssid }}</td>
+            <td>{{ accessPoint.bandwidth }}</td>
+            <td>{{ accessPoint.standard }}</td>
+            <td>{{ accessPoint.channel }}</td>
+            <td>{{ accessPoint.frequency }}</td>
+            <td>{{ accessPoint.signal }}</td>
+        </tr>
+    {% endfor %} 
+   
+{% endblock tabelaCorpo %}
+

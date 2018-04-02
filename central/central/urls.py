@@ -21,7 +21,8 @@ urlpatterns = [
     path('', central_view.index, name="Home"),    
     path('access_point/', include('access_points.urls')),
     path('aparelho_historico/', include('device_history.urls')),
-    #path('aparelho/', include('devices.urls')),
+    path('aparelho/', include('devices.urls')),
+    path('log/', include('logs.urls')),
     path('admin/', admin.site.urls),
     
 ]
