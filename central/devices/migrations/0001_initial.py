@@ -12,16 +12,18 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='DeviceHistory',
+            name='Device',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('id_device', models.IntegerField(default=0, verbose_name='Canal')),
-                ('id_access_point', models.IntegerField(default=0, verbose_name='Canal')),
+                ('id_access_point', models.IntegerField(default=0, verbose_name='Access Point')),
+                ('mac', models.TextField(max_length=200, verbose_name='Mac')),
+                ('vendor', models.TextField(max_length=200, verbose_name='Fabricante')),
+                ('standard', models.TextField(max_length=200, verbose_name='Padrão')),
                 ('channel', models.IntegerField(default=6, verbose_name='Canal')),
                 ('frequency', models.TextField(max_length=200, verbose_name='Frequencia')),
                 ('signal', models.TextField(max_length=200, verbose_name='Sinal')),
-                ('description', models.TextField(max_length=200, verbose_name='Descrição')),
-                ('datetime', models.DateTimeField(auto_now_add=True, verbose_name='Data Hora')),
+                ('status', models.IntegerField(default=0, verbose_name='Status')),
+                ('last_update', models.DateTimeField(auto_now_add=True, verbose_name='Ultima Atualizacao')),
             ],
         ),
     ]
