@@ -8,6 +8,7 @@ class AccessPoint(models.Model):
     standard = models.CharField("Padrão",max_length=200)
     channel = models.IntegerField("Canal",default=6)
     frequency = models.IntegerField("Frequencia")
+    signal = models.CharField("Sinal",max_length=200)
 
 class Meta:
     db_table = 'access_points'
