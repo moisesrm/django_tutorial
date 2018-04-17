@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'devices.apps.DevicesConfig',
     'device_history.apps.DeviceHistorysConfig',
     'logs.apps.LogsConfig',
+    'filters.apps.FiltersConfig',
     # 'relatorios.apps.RelatoriosConfig',
 ]
 

@@ -9,6 +9,9 @@ class AccessPoint(models.Model):
     channel = models.IntegerField("Canal",default=6)
     frequency = models.IntegerField("Frequencia")
 
+    def __str__(self):
+        return "%s" % (self.bssid)
+
 class Meta:
     db_table = 'access_points'
     managed = True

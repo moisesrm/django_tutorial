@@ -1,8 +1,10 @@
 {% extends 'template.html' %}
 {% load static %}
 
+
 {% block content %}
     <div class='div-listagem'>
+        {% block btnFormulario %}{% endblock %}
         <h3 align='center' style="color:black;"><b>{% block tituloListagem %}{% endblock tituloListagem %}</b></h3>
         <br />
         <table id='listagem' class='display' cellspacing='0' width='100%'>

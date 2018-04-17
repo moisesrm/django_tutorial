@@ -1,0 +1,37 @@
+{% extends 'listagem.html' %}
+
+{% block titulo %}Filtros{% endblock titulo %}
+{% block tituloListagem %}Filtros{% endblock tituloListagem %}
+
+{% block btnFormulario %}<a href="/filtro/registro/" class='btn btn-primary' style="float: right;">Registrar</a>{% endblock btnFormulario %}
+
+{% block tabelaCabecalho %}
+    <tr>
+        <th>Descricao</th>
+        <th>Nome</th>
+        <th>Status</th>
+        <th>Opções</th>
+    </tr>     
+{% endblock tabelaCabecalho %}
+
+{% block tabelaCorpo %}        
+
+    {% for filter in filters  %}
+        <tr>
+            <td>{{ filter.description }}</td>
+            <td>{{ filter.file }}</td>
+            <td>{{ filter.getStrStatus }}</td>
+            <td>
+                <a href='/filtro/editar/{{ filter.id }}' class='btn-sm btn-primary' alt="Editar"><i class='glyphicon glyphicon-pencil'></i></a>
+                {%if filter.status %}
+                    <a href='/filtro/inativar/{{ filter.id }}' class='btn-sm btn-success' alt="Ativo"><i class='glyphicon glyphicon-ok-sign'></i></a>
+                {%else%}
+                    <a href='/filtro/ativar/{{ filter.id }}' class='btn-sm bg-gray' alt="Inativo"><i class='glyphicon glyphicon-minus-sign'></i></a>
+                {%endif%}
+                <a href='/filtro/deletar/{{ filter.id }}' class='btn-sm btn-danger' alt="Deletar"><i class='glyphicon glyphicon-remove-sign'></i></a>
+            </td>
+        </tr>
+    {% endfor %} 
+   
+{% endblock tabelaCorpo %}
+

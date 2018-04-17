@@ -5,7 +5,6 @@ from .models import AccessPoint
 
 @login_required
 def index(request):
-    # accessPoints = AccessPoint.objects.all()
-    accessPoints = []
+    accessPoints = AccessPoint.objects.all()
     context = {'accessPoints': accessPoints}
     return render(request, 'access_points/index.html', context)

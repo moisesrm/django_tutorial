@@ -5,7 +5,6 @@ from .models import Device
 
 @login_required
 def index(request):
-    # devices = Device.objects.all()
-    devices = []
+    devices = Device.objects.all()
     context = {'devices': devices}
     return render(request, 'devices/index.html', context)
