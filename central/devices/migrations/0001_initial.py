@@ -22,7 +22,7 @@ class Migration(migrations.Migration):
                 ('standard', models.TextField(max_length=200, verbose_name='Padrão')),
                 ('channel', models.IntegerField(default=6, verbose_name='Canal')),
                 ('frequency', models.TextField(max_length=200, verbose_name='Frequencia')),
-                ('signal', models.IntegerField(max_length=200, verbose_name='Sinal')),
+                ('signal', models.IntegerField(default=0, verbose_name='Sinal')),
                 ('status', models.IntegerField(default=0, verbose_name='Status')),
                 ('last_update', models.DateTimeField(auto_now_add=True, verbose_name='Ultima Atualizacao')),
                 ('access_point', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='access_points.AccessPoint')),

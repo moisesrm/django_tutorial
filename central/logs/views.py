@@ -5,7 +5,6 @@ from .models import Log
 
 @login_required
 def index(request):
-    #logs = Log.objects.all()
-    logs = []
+    logs = Log.objects.all()
     context = {'logs': logs}
     return render(request, 'logs/index.html', context)

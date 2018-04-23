@@ -11,7 +11,7 @@ class Device(models.Model):
     standard = models.TextField("Padrão",max_length=200)
     channel = models.IntegerField("Canal",default=6)
     frequency = models.TextField("Frequencia",max_length=200)
-    signal = models.IntegerField("Sinal",max_length=200)
+    signal = models.IntegerField("Sinal",default=0)
     status = models.IntegerField('Status',default=0)
     last_update = models.DateTimeField('Ultima Atualizacao',auto_now_add=True)
     
