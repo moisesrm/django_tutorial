@@ -8,3 +8,22 @@ def index(request):
     accessPoints = AccessPoint.objects.all()
     context = {'accessPoints': accessPoints}
     return render(request, 'access_points/index.html', context)
+
+
+@login_required
+def inativar_registro(request,id):
+    accessPoints = get_object_or_404(Filter,id=id)
+    if accessPoints:
+        accessPoints.active ='0'
+        accessPoints.save()
+        messages.success(request,"Desativado com sucesso!")
+        return redirect("filter:index")
+
+@login_required
+def ativar_registro(request,id):
+    accessPoints = get_object_or_404(Filter,id=id)
+    if accessPoints:
+        accessPoints.active = '1'
+        accessPoints.save()
+        messages.success(request,"Ativado com sucesso!")
+        return redirect("filter:index")

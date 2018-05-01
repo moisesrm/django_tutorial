@@ -26,7 +26,7 @@ def registro(request):
 @login_required
 def editar_registro(request,id):
     filtro = get_object_or_404(Filter,id=id)
-    form = FilterForm(request.POST or None)
+    form = FilterForm(request.POST or None, instance=filtro)
     if form.is_valid():
         form.save()
         messages.success(request,"Editado com sucesso!")
@@ -48,12 +48,16 @@ def deletar_registro(request,id):
 def inativar_registro(request,id):
     filtro = get_object_or_404(Filter,id=id)
     if filtro:
-        filtro.update(ativo='0')
+        filtro.status ='0'
+        filtro.save()
+        messages.success(request,"Desativado com sucesso!")
         return redirect("filter:index")
 
 @login_required
 def ativar_registro(request,id):
     filtro = get_object_or_404(Filter,id=id)
     if filtro:
-        filtro.update(ativo='1')
+        filtro.status = '1'
+        filtro.save()
+        messages.success(request,"Ativado com sucesso!")
         return redirect("filter:index")

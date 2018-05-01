@@ -24,6 +24,7 @@ urlpatterns = [
     path('aparelho/', include('devices.urls')),
     path('filtro/', include('filters.urls')),
     path('log/', include('logs.urls')),
+    path('relatorio/', include('relatorios.urls')),
     path('admin/', admin.site.urls),
     
 ]

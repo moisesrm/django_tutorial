@@ -8,6 +8,7 @@ class AccessPoint(models.Model):
     standard = models.CharField("Padrão",max_length=200)
     channel = models.IntegerField("Canal",default=6)
     frequency = models.IntegerField("Frequencia")
+    active = models.IntegerField("Ativo")
 
     def __str__(self):
         return "%s" % (self.bssid)

@@ -8,4 +8,4 @@ class FilterForm(forms.ModelForm):
 	
 	class Meta:
 		model  = Filter
-		fields = ['description','file']
+		fields = ['description','file','priority']

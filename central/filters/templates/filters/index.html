@@ -22,13 +22,13 @@
             <td>{{ filter.file }}</td>
             <td>{{ filter.getStrStatus }}</td>
             <td>
-                <a href='/filtro/editar/{{ filter.id }}' class='btn-sm btn-primary' alt="Editar"><i class='glyphicon glyphicon-pencil'></i></a>
+                <a href='/filtro/editar/{{ filter.id }}' class='btn-sm btn-primary' alt="Editar" title="clique para editar"><i class='glyphicon glyphicon-pencil'></i></a>
                 {%if filter.status %}
-                    <a href='/filtro/inativar/{{ filter.id }}' class='btn-sm btn-success' alt="Ativo"><i class='glyphicon glyphicon-ok-sign'></i></a>
+                    <a href='/filtro/inativar/{{ filter.id }}' class='btn-sm btn-success' alt="Ativo" title="clique para inativar"><i class='glyphicon glyphicon-thumbs-up'></i></a>
                 {%else%}
-                    <a href='/filtro/ativar/{{ filter.id }}' class='btn-sm bg-gray' alt="Inativo"><i class='glyphicon glyphicon-minus-sign'></i></a>
+                    <a href='/filtro/ativar/{{ filter.id }}' class='btn-sm' alt="Inativo" title="clique para ativar" style="background-color:#c4c4c4;color:#fff"><i class='glyphicon glyphicon-thumbs-down'></i></a>
                 {%endif%}
-                <a href='/filtro/deletar/{{ filter.id }}' class='btn-sm btn-danger' alt="Deletar"><i class='glyphicon glyphicon-remove-sign'></i></a>
+                <a href='/filtro/deletar/{{ filter.id }}' class='btn-sm btn-danger' alt="Deletar" title="clique para deletar"><i class='glyphicon glyphicon-trash'></i></a>
             </td>
         </tr>
     {% endfor %} 
