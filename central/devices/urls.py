@@ -19,5 +19,5 @@ from . import views
 app_name = 'device'
 urlpatterns = [
      # ex: /aparelhos/
-    path('', views.index, name='index')    
+    path('', views.index, name='index')
 ]

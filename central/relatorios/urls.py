@@ -20,4 +20,7 @@ app_name = 'relatorios'
 urlpatterns = [
      # ex: /access_point/
     path('', views.index, name='index'),
+    path('sinal', views.sinal, name='sinal'),
+    path('aparelhos', views.aparelhos, name='aparelhos'),
+    path('canal', views.canal, name='canal'),
 ]

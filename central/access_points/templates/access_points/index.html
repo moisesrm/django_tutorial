@@ -11,6 +11,7 @@
         <th>Padrão</th>
         <th>Canal</th>
         <th>Frequencia</th>
+        <th>Opção</th>
     </tr>     
 {% endblock tabelaCabecalho %}
 
@@ -21,9 +22,16 @@
             <td>{{ accessPoint.mac }}</td>
             <td>{{ accessPoint.bssid }}</td>
             <td>{{ accessPoint.bandwidth }}</td>
-            <td>{{ accessPoint.standard }}</td>
+            <td>{{ accessPoint.getStrPadrao }}</td>
             <td>{{ accessPoint.channel }}</td>
             <td>{{ accessPoint.frequency }}</td>
+            <td>
+                {%if accessPoint.active %}
+                    <a href='/access_point/inativar/{{ accessPoint.id }}' class='btn-sm btn-success' alt="Ativo" title="clique para inativar"><i class='glyphicon glyphicon-thumbs-up'></i></a>
+                {%else%}
+                    <a href='/access_point/ativar/{{ accessPoint.id }}' class='btn-sm' alt="Inativo" title="clique para ativar" style="background-color:#c4c4c4;color:#fff"><i class='glyphicon glyphicon-thumbs-down'></i></a>
+                {%endif%}
+            </td>
         </tr>
     {% endfor %} 
    

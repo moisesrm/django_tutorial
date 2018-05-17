@@ -33,8 +33,7 @@ class Device(models.Model):
             strPadrao += "n"
         elif self.standard == "8" : 
             strPadrao += "ac"
-
-        strPadrao += " (" + self.standard + ")"
+            
         return strPadrao
 
     def getStrStatus(self):

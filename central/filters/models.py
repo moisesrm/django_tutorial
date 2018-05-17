@@ -9,7 +9,7 @@ class Filter(models.Model):
     description = models.TextField("Descricao",max_length=200)
     file = models.TextField("Arquivo",max_length=200)
     status = models.IntegerField('Status',default=0)
-    priority = models.CharField('Prioridade',max_length=6, choices=PRIORIDADES, default='5')
+    priority = models.IntegerField('Prioridade',choices=PRIORIDADES, default='5')
 
     def getStrStatus(self):
         if self.status == 1 :

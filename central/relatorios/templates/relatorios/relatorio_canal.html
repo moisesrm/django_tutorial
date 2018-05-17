@@ -1,0 +1,23 @@
+{% extends 'listagem.html' %}
+
+{% block titulo %}Relatorio Canais{% endblock titulo %}
+{% block tituloListagem %}Relatorio Canais{% endblock tituloListagem %}
+
+{% block tabelaCabecalho %}
+    <tr>
+        <th>Canal</th>
+        <th>Aps</th>
+    </tr>     
+{% endblock tabelaCabecalho %}
+
+{% block tabelaCorpo %}   
+    {% for index, dados in canais.items %}
+        <tr>
+            {% for dado in dados %}
+                <td>{{dado}}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %} 
+   
+{% endblock tabelaCorpo %}
+

@@ -5,19 +5,25 @@
 
 {% block tabelaCabecalho %}
     <tr>
-        <th>Data/Hora</th>
+        <th>Relatorio</th>
         <th>Descricao</th>
     </tr>     
 {% endblock tabelaCabecalho %}
 
 {% block tabelaCorpo %}        
 
-    {% for log in logs  %}
-        <tr>
-            <td>{{ log.datetime }}</td>
-            <td>{{ log.description }}</td>
-        </tr>
-    {% endfor %} 
+    <tr>
+        <td><a href="/relatorio/sinal">Aparelhos x Nivel de Sinal</a></td>
+        <td>Lista de Aparelhos por Sinal</td>
+    </tr>
+    <tr>
+        <td><a href="/relatorio/canal">Canal</a></td>
+        <td>Lista de Canais com numero de APs</td>
+    </tr>
+    <tr>
+        <td><a href="/relatorio/aparelhos">Aparelhos x Aps</a></td>
+        <td>Lista de Numero de Aparelhos por APs</td>
+    </tr>
    
 {% endblock tabelaCorpo %}
 

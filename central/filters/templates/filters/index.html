@@ -10,6 +10,7 @@
         <th>Descricao</th>
         <th>Nome</th>
         <th>Status</th>
+        <th>Prioridade</th>
         <th>Opções</th>
     </tr>     
 {% endblock tabelaCabecalho %}
@@ -21,6 +22,7 @@
             <td>{{ filter.description }}</td>
             <td>{{ filter.file }}</td>
             <td>{{ filter.getStrStatus }}</td>
+            <td>{{ filter.priority }}</td>
             <td>
                 <a href='/filtro/editar/{{ filter.id }}' class='btn-sm btn-primary' alt="Editar" title="clique para editar"><i class='glyphicon glyphicon-pencil'></i></a>
                 {%if filter.status %}

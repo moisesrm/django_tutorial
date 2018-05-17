@@ -1,0 +1,23 @@
+{% extends 'listagem.html' %}
+
+{% block titulo %}Relatorio Aparelhos{% endblock titulo %}
+{% block tituloListagem %}Relatorio Aparelhos{% endblock tituloListagem %}
+
+{% block tabelaCabecalho %}
+    <tr>
+        <th>Ap</th>
+        <th>Aparelhos</th>
+    </tr>     
+{% endblock tabelaCabecalho %}
+
+{% block tabelaCorpo %}        
+
+    {% for ap in aps  %}
+        <tr>
+            <td>{{ ap.bssid }}</td>
+            <td>{{ ap.aparelhos }}</td>
+        </tr>
+    {% endfor %} 
+   
+{% endblock tabelaCorpo %}
+

@@ -1,0 +1,25 @@
+{% extends 'listagem.html' %}
+
+{% block titulo %}Relatorio Sinal{% endblock titulo %}
+{% block tituloListagem %}Relatorio Sinal{% endblock tituloListagem %}
+
+{% block tabelaCabecalho %}
+    <tr>
+        <th>Ap</th>
+        <th>Aparelhos</th>
+        <th>Sinal</th>
+    </tr>     
+{% endblock tabelaCabecalho %}
+
+{% block tabelaCorpo %}        
+
+    {% for device in devices  %}
+        <tr>
+            <td>{{ device.access_point }}</td>
+            <td>{{ device.mac }}</td>
+            <td>{{ device.signal }}</td>
+        </tr>
+    {% endfor %} 
+   
+{% endblock tabelaCorpo %}
+
